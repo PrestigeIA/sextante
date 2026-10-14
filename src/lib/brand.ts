@@ -6,7 +6,7 @@
  */
 export const BRAND = {
   name: "Sextante",
-  legalEntity: "[Razão social da empresa responsável]",
+  legalEntity: "Apex Prestige Financial Platform LLC",
   supportEmail: "[e-mail de suporte]",
   governingLaw: "Estado do Texas, Estados Unidos",
   lastUpdated: "outubro de 2026",
