@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+/*
+ * Sextante — dark, data-dense theme in the convention of the leading options
+ * apps. Green/red carry P&L and are always paired with a +/− sign; the brass
+ * accent is the brand. Text colors keep ≥ 4.5:1 contrast on the card surface.
+ */
+@theme {
+  --color-background: #0a0d12;
+  --color-foreground: #e8ecf2;
+  --color-card: #121722;
+  --color-card-foreground: #e8ecf2;
+  --color-popover: #151b27;
+  --color-popover-foreground: #e8ecf2;
+  --color-primary: #e2b355;
+  --color-primary-foreground: #0a0d12;
+  --color-secondary: #1a2130;
+  --color-secondary-foreground: #e8ecf2;
+  --color-muted: #161c28;
+  --color-muted-foreground: #95a0b3;
+  --color-accent: #1d2534;
+  --color-accent-foreground: #e8ecf2;
+  --color-destructive: #ff7a7a;
+  --color-destructive-foreground: #0a0d12;
+  --color-border: #1f2633;
+  --color-input: #2a3344;
+  --color-ring: #e2b355;
+
+  --color-gain: #3ddc97;
+  --color-gain-bg: #0f1f19;
+  --color-gain-border: #1e4a38;
+  --color-loss: #ff7a7a;
+  --color-loss-bg: #1f1214;
+  --color-warn: #ffb27a;
+  --color-warn-bg: #1a1410;
+  --color-warn-border: #3a2a1a;
+  --color-info: #7fb2ff;
+  --color-info-bg: #142338;
+  --color-brass: #e2b355;
+  --color-brass-bg: #2a2312;
+  --color-brass-border: #4a3d1f;
+  --color-surface: #0d1118;
+
+  --radius: 0.875rem;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  input[type="range"] {
+    accent-color: var(--color-primary);
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .shadow-border {
+    box-shadow: var(--shadow-border);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

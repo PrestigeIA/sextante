@@ -1,0 +1,11 @@
+.vercel
+.env*
+node_modules
+dist
+.output
+.nitro
+.tanstack
+.DS_Store
+ios/App/App/public
+android/app/src/main/assets/public
+!.env.example
